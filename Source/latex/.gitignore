@@ -1,0 +1,12 @@
+book.pdf
+*.idx
+*.log
+*.tmp
+*.bbl
+*.out
+*.toc
+*~
+*.d
+*.fls
+*.make
+*.cookie
