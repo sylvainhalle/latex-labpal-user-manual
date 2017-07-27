@@ -1,18 +1,73 @@
 \documentclass{lifmanual}
+\usepackage[english]{babel}
 \usepackage{import}
+
+%% Single spacing in lists (TOC and all) and double spacing
+%% elsewhere
+\usepackage{setspace}
+
+
 \input{pandoc.inc.2.tex}
+
+
+% Generate an index
 \makeindex
-\title{LabPal User Manual}
-\author{Sylvain Hallé}
+
+%% ------------------------
+%% Metadata
+%% ------------------------
+\hypersetup{%
+  pdfauthor = {Sylvain Hallé},
+  pdftitle = {LabPal User Manual}
+}
 
 \begin{document}
 
-\maketitle
-\tableofcontents
-\newpage
+%% ------------------------
+%% Title page
+%% ------------------------
+\title{LabPal User Manual}
+\author{Sylvain Hallé}
+%\thispagestyle{empty}
+%\maketitle
+\includepdf[page=1]{title-page.pdf}
 
+%% ------------------------
+%% Front matter (TOC, etc.)
+%% ------------------------
+\frontmatter
+\singlespacing
+\addtocounter{page}{1}
+%% \include{foreword} %% Optional
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\contentsname}
+\tableofcontents
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{\listfigurename}
+%\listoffigures
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{\listtablename}
+%\listoftables
+
+%% ------------------------
+%% Main document
+%% ------------------------
+\mainmatter
+%\doublespacing
 \subimport{chapters/}{body}
 
+%% ------------------------
+%% Back matter
+%% ------------------------
+\backmatter
+%% Style des références bibliographiques
+\bibliographystyle{plain}
+
+%% Source files for the references
+%% More than one can be included by separating their names with commas
+\bibliography{book}
+
+%% Uncomment to generate an index
 \printindex
 
 \end{document}

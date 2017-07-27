@@ -64,7 +64,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{multicol}
 
-\definecolor{Highlight}{RGB}{173,73,106}
+\definecolor{Highlight}{RGB}{178,155,207}
 
 %% ------------------------
 %% Chargement conditionnel de packages selon le document produit
